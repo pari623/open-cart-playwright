@@ -1,0 +1,35 @@
+{
+  "name": "opencartplaywright",
+  "version": "1.0.0",
+  "main": "index.js",
+"scripts": {
+"tests": "npx playwright test",
+"test:specific": "npx playwright test --grep file-name.spec.ts",
+"test:tag": "npx playwright test --grep @datadriven",
+"test:tag:dryrun": "npx cucumber-ts --tags @sep09 --dry-run",
+"test:smoke": "npx cucumber-js --tags @smoke",
+"test:report": "npx playwright show-report",    
+"allure-prepare-report":"allure generate ./allure-results -o ./allure-report --clean",
+"allure-open-report":"allure open ./allure-report",
+"test:master": "playwright test --grep @master",
+"test:sanity": "playwright test --grep @sanity",
+"test:regression": "playwright test --grep @regression",
+"test:datadriven": "playwright test --grep @datadriven",
+"test:master:headed": "playwright test --grep @master --headed",
+"test:sanity:debug": "playwright test --grep @sanity --debug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.5.2",
+    "allure-playwright": "^3.7.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.4.0",
+    "csv-parse": "^6.2.1",
+    "xlsx": "^0.18.5"
+  }
+}
